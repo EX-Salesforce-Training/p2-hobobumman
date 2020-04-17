@@ -1,0 +1,111 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <!-- attributes for the visibility of each math topic section. All Booleans-->
+    <aura:attribute name="isDVisible" type="Boolean" default="false" />
+    <aura:attribute name="arithmeticVisible" type = "Boolean" default = "false"/> 
+    <aura:attribute name="algebraVisible" type = "Boolean" default = "false"/>
+    <aura:attribute name="calculusVisible" type = "Boolean" default ="false"/>
+    <!--Buttons for each section-->
+    <lightning:button onclick="{! c.handleShowActiveSectionName }" label="Show Active Section Name"/>
+    <lightning:button onclick = "{!c.toggleArithmetic}" label = "Arithmetic"/>
+    <lightning:button onclick = "{!c.toggleAlgebra}" label = "Algebra"/>
+    <lightning:button onclick = "{!c.toggleCalculus}" label = "Calculus"/>
+    <lightning:button onclick="{! c.handleToggleSectionD }" label="Toggle Section D"/>
+    
+    <!--The BIG accordion-->
+    <lightning:accordion aura:id="accordion" activeSectionName="B">
+    <!--Accordion section for Arithmetic-->    
+    <aura:if isTrue="{!v.arithmeticVisible}">
+        <lightning:accordionSection name="mainArithmetic" label="Arithemtic">
+            <h1 style="font-size: larger;"> Arithmetic</h1>
+            
+            <!-- Arithmetic Accordion Subsections-->
+            <lightning:Accordion aura:id ="arithmeticAccordion"  >
+                <lightning:accordionSection name = "fourOperations" label="The Four Basic Operations" >
+                    <h1 style="font-size: larger;">The Four Basic Operations</h1>
+                    <ul>
+                        <li>Addition</li>
+                        <li>Subtraction</li>
+                        <li>Multiplication</li>
+                        <li>Division</li>
+                    </ul> 
+                </lightning:accordionSection>
+                <lightning:accordionSection name = "Fractions" label="Fractions" >
+                    <ul>
+                        <li>Least Common Denominator</li>
+                        <li>Addition</li>
+                        <li>Subtraction</li>
+                        <li>Multiplication</li>
+                        <li>Division</li>
+                    </ul> 
+                </lightning:accordionSection>
+                <lightning:accordionSection name = "Decimals" label="Decimals" >
+                    <ul>
+                        <li>Relationship Between Fractions and Decimals</li>
+                        <li>Addition</li>
+                        <li>Subtraction</li>
+                        <li>Multiplication</li>
+                        <li>Division</li>
+                    </ul> 
+                </lightning:accordionSection>
+                <lightning:accordionSection name = "problemSolving" label="Problem Solving" >
+                    <ul>
+                        <li>Relationship Between Fractions and Decimals</li>
+                        <li>Addition</li>
+                        <li>Subtraction</li>
+                        <li>Multiplication</li>
+                        <li>Division</li>
+                    </ul> 
+                </lightning:accordionSection>
+            </lightning:Accordion>
+        </lightning:accordionSection>
+    </aura:if>
+
+           <!--Algebra Section-->
+           <aura:if isTrue="{!v.algebraVisible}">
+            <lightning:accordionSection name="Algebra" label="Algebra">
+                <h1>Algebra</h1>
+                <p>Variables</p>
+                <p>Operations with Variables</p>
+                <!--Algebra accordion subsections-->
+                <lightning:accordion aura:id = "algebraAccordian" >
+                    <lightning:accordionSection name = "Variables" label = "Variables">
+                        Manipulating variables. 
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name = "Linear" label = "Linear Functions">
+                        Solving Equations 
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name = "quadraticAccordion" label = "Quadratic Functions">
+                    Quadradic Functions
+                    </lightning:accordionSection> 
+                </lightning:accordion>
+            </lightning:accordionSection>
+        </aura:if>
+
+
+    <!--Calculus Section-->
+    <aura:if isTrue="{!v.calculusVisible}">
+        <lightning:accordionSection name="Calculus" label="Calculus">
+            <h1 style="font-size: larger;">Calculus </h1>
+            <!--Calculus subsections-->
+            <lightning:accordion aura:id = "CaculusSections" >
+                <lightning:accordionSection name = "Limits" label = "Limits and Continuity">
+                    Limits and Continuity
+                </lightning:accordionSection>
+                <lightning:accordionSection name = "Derivative" label = "The Derivative">
+                    The derivative
+                </lightning:accordionSection>
+                <lightning:accordionSection name = "Integral" label = "The Integral">
+                    The integral 
+                </lightning:accordionSection>
+            </lightning:accordion>
+        </lightning:accordionSection>
+    </aura:if>
+    <!--The Calculator-->
+        <aura:if isTrue="{! v.isDVisible }">
+            <lightning:accordionSection name="D" label="Calculator">
+                <p>This is the content area for section D.</p>
+                <p>Calculator </p>
+            </lightning:accordionSection>
+        </aura:if>
+    </lightning:accordion>
+</aura:component>
