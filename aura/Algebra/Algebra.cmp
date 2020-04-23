@@ -1,0 +1,13 @@
+<aura:component>
+    <lightning:accordion aura:id = "algebraAccordian" >
+                    <lightning:accordionSection name = "Variables" label = "Variables">
+                        Manipulating variables. 
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name = "Linear" label = "Linear Functions">
+                        Solving Equations 
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name = "quadraticAccordion" label = "Quadratic Functions">
+                    Quadradic Functions
+                    </lightning:accordionSection> 
+    </lightning:accordion>
+</aura:component>	

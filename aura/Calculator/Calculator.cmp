@@ -1,0 +1,52 @@
+<aura:component controller="CalculatorController">
+
+    <!--Input string to be parsed as an operation with 'eval'-->
+    <!--Calculator attributes that store the two numbers and the result of 
+    the arithmetic on those two numbers. 
+    -->
+    <aura:attribute name="userInput" type="String"/>
+    <aura:attribute name="results" type="String"/>
+    <lightning:input name ="userInput " label ="Input Operations Here: " value="{!v.userInput}"/>
+    <br/>
+    <lightning:button label = "ENTER" onclick="{!c.Evaluate}" />
+    <lightning:button label = "Derivative" onclick="{!c.Derivative}"/>
+    The Results = {!v.results}
+    <!--Crappy input of two numbers.-->
+    <aura:attribute name="num1" type="integer" />
+    <aura:attribute name="num2" type="integer" />
+    <aura:attribute name="total" type="integer" />
+    <!--Calculator attributes  to help determine which buttons where pushed. -->
+    <aura:attribute name="isAdd" type="boolean" default="false" />
+    <aura:attribute name="isSub" type="boolean" default="false" />
+    <aura:attribute name="isMul" type="boolean" default="false" />
+    <aura:attribute name="isDiv" type="boolean" default="false" />
+    <!--User input -->
+    <lightning:input name="input1" label="Enter First Number" value="{!v.num1}" />
+    <lightning:input name="input2" label="Enter Second Number" value="{!v.num2}" />
+    <br/>
+
+    <!-- The Calculator Button Display-->   
+    <lightning:buttonGroup>
+        <lightning:button label="Addition" onclick="{!c.Add}" />
+        <lightning:button label="Subtract" onclick="{!c.Sub}" />
+        <lightning:button label="Multiply" onclick="{!c.Mul}" />
+        <lightning:button label="Division" onclick="{!c.Divi}" />
+        <lightning:button label="Clear" onclick="{!c.Clear}" />
+    </lightning:buttonGroup> 
+
+    <br/>
+    <!-- Reveal the result depending on which operation was selected-->
+    <aura:if isTrue="{!v.isAdd}">
+        Addition of Two Numbers = {!v.total}
+    </aura:if>
+    <aura:if isTrue="{!v.isSub}">
+        Subtraction of Two Numbers = {!v.total}
+    </aura:if>
+    <aura:if isTrue="{!v.isMul}">
+        Multiplication of Two Numbers = {!v.total}
+    </aura:if>
+    <aura:if isTrue="{!v.isDiv}">
+        Division of Two Numbers = {!v.total}
+    </aura:if>
+
+</aura:component>	

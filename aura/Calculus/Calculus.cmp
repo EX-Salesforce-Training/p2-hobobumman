@@ -1,0 +1,13 @@
+<aura:component>
+    <lightning:accordion aura:id = "CaculusSections" >
+                <lightning:accordionSection name = "Limits" label = "Limits and Continuity">
+                    Limits and Continuity
+                </lightning:accordionSection>
+                <lightning:accordionSection name = "Derivative" label = "The Derivative">
+                    The derivative
+                </lightning:accordionSection>
+                <lightning:accordionSection name = "Integral" label = "The Integral">
+                    The integral 
+                </lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>	
