@@ -1,0 +1,64 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <!-- attributes for the visibility of each math topic section. All Booleans-->
+    <aura:attribute name="calculatorVisible" type="Boolean" default="false" />
+    <aura:attribute name="arithmeticVisible" type = "Boolean" default = "false"/>
+    <aura:attribute name="algebraVisible" type = "Boolean" default = "false"/>
+    <aura:attribute name="calculusVisible" type = "Boolean" default ="false"/>
+    <aura:attribute name ="userInfoVisible" type="Boolean" default = "false"/>
+    <!--Buttons for each section-->
+    <lightning:button onclick="{! c.handleShowActiveSectionName }" label="Show Active Section Name"/>
+    <lightning:button onclick = "{!c.toggleArithmetic}" label = "Arithmetic"/>
+    <lightning:button onclick = "{!c.toggleAlgebra}" label = "Algebra"/>
+    <lightning:button onclick = "{!c.toggleCalculus}" label = "Calculus"/>
+    <lightning:button onclick="{! c.toggleCalculator}" label="Calculator"/>
+    <lightning:button onclick="{!c.toggleUserInfo}" label ="User Info"/>
+    
+    <!--The BIG accordion-->
+    <lightning:accordion aura:id="accordion" activeSectionName="B">
+    <!--Accordion section for Arithmetic-->    
+    <aura:if isTrue="{!v.arithmeticVisible}">
+        <lightning:accordionSection name="mainArithmetic" label="Arithemtic">
+            <h1 style="font-size: larger;"> Arithmetic</h1>
+            
+            <!-- Arithmetic Accordion Subsections-->
+            <c:Arithmetic/>
+        </lightning:accordionSection>
+    </aura:if>
+           
+    <!--Algebra Section-->
+           <aura:if isTrue="{!v.algebraVisible}">
+            <lightning:accordionSection name="Algebra" label="Algebra">
+                <h1>Algebra</h1>
+                <p>Variables</p>
+                <p>Operations with Variables</p>
+                <!--Algebra accordion subsections-->
+                <c:Algebra/>
+            </lightning:accordionSection>
+        </aura:if>
+
+
+    <!--Calculus Section-->
+    <aura:if isTrue="{!v.calculusVisible}">
+        <lightning:accordionSection name="Calculus" label="Calculus">
+            <h1 style="font-size: larger;">Calculus </h1>
+            <!--Calculus subsections-->
+            <c:Calculus/>
+
+        </lightning:accordionSection>
+    </aura:if>
+    <!--The Calculator-->
+        <aura:if isTrue="{! v.calculatorVisible }">
+            <lightning:accordionSection name="Calculator" label="Calculator">
+                
+            <c:Calculator/>
+            </lightning:accordionSection>
+        </aura:if>
+    
+    <aura:if isTrue="{! v.userInfoVisible }">
+            <lightning:accordionSection name="User Information" label="User Information">
+                
+            <c:UserInfo/>
+            </lightning:accordionSection>
+        </aura:if>
+    </lightning:accordion>
+</aura:component>

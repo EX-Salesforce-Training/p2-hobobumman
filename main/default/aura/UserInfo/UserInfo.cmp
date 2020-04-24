@@ -1,0 +1,39 @@
+<aura:component controller = "UserInfoController">
+    <aura:attribute name="theUser" type="Account"/>
+    <aura:attribute name="userInput" type="String"/>
+
+    <aura:attribute name="newAccount" type="Account"
+                    default="{ 
+                             'sobjectType':'Account',
+                             'Name': 'YourName',
+                             'Rating' : 'Warm'
+                             }"/>
+                             
+<lightning:accordion>
+    <lightning:accordionSection name = "Search User" label = "Search User">
+    <h1>Display User Information</h1>
+    <h2>Search by User Name.</h2>
+    <lightning:input name ="userInput " label ="Input Operations Here: " value="{!v.userInput}"/>
+    
+    <lightning:button label = "Get User Info" onclick ="{!c.ObtainUserInfo}"/>
+
+    <lightning:formattedText value="{!v.theUser.Name}" />
+    <lightning:formattedText value="{!v.theUser.Rating}"/>
+</lightning:accordionSection>
+<lightning:accordionSection name ="New User" label="New User">
+    <h1> Create new User.    </h1>
+
+    
+    
+    <fieldset class="slds-box slds-theme--default slds-container--small">
+    	<form class="slds-form--stacked">
+            <lightning:input aura:id="new_Name"
+                             label="Name"
+                             name="newName"
+                             value="{!v.newAccount.Name}" />
+            <lightning:button label="Create User" onclick="{!c.CreateAccount}" />
+        </form>
+    </fieldset>
+</lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>	
