@@ -1,0 +1,14 @@
+<aura:component controller = "UserInfoController">
+    <aura:attribute name="theUser" type="User"/>
+    <aura:attribute name="userInput" type="String"/>
+
+    <h1>Display User Information</h1>
+    <h2>Search by User Name.</h2>
+    <lightning:input name ="userInput " label ="Input Operations Here: " value="{!v.userInput}"/>
+    
+    <lightning:button label = "Get User Info" onclick ="{!c.ObtainUserInfo}"/>
+
+    <lightning:formattedText value="{!v.theUser.Name}" />
+    <lightning:formattedText value = "{!v.theUser.Username}"/>
+    <lightning:formattedNumber value="{!v.theUser.Problems_Completed__c}"/>
+</aura:component>	

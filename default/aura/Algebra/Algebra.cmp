@@ -1,0 +1,22 @@
+<aura:component>
+    <!--Handlers for the flows-->
+    <aura:handler name="init" value="{!this}" action="{!c.FlowLikeTerms}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowLinear}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowQuadratic}" />
+
+    <lightning:accordion aura:id = "algebraAccordian" >
+                    <lightning:accordionSection name = "Variables" label = "Variables">
+                        <p>We say that terms are like if they have the same exact variable and the same exact power. </p> 
+                        <!--Flow Like Terms-->    
+                        <lightning:flow aura:id="LikeTermsFlow" />
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name = "Linear" label = "Linear Functions">
+                        <!--Flow linear functions-->
+                        <lightning:flow aura:id="LinearFlow" />
+                    </lightning:accordionSection>
+                    <lightning:accordionSection name = "quadraticAccordion" label = "Quadratic Functions">
+                        <!--For quadratic FUNCTIONS -->
+                        <lightning:flow aura:id="QuadraticFlow" />
+                    </lightning:accordionSection> 
+    </lightning:accordion>
+</aura:component>	
