@@ -1,0 +1,54 @@
+<aura:component>
+    <!--Handlers for the flows-->
+    <aura:handler name="init" value="{!this}" action="{!c.FlowBasicOperations}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowFractions}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowDecimals}" />
+
+    <lightning:Accordion aura:id ="arithmeticAccordion"  >
+        <lightning:accordionSection name = "fourOperations" label="The Four Basic Operations" >
+            <h1 style="font-size: larger;">The Four Basic Operations</h1>
+            <ul>
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+                <li>Order of Operations</li>
+            </ul> 
+            <!--Flow presents here-->
+            <lightning:flow aura:id="BasicOperationsFlow" />
+        </lightning:accordionSection>
+        <lightning:accordionSection name = "Fractions" label="Fractions" >
+            <ul>
+                <li>Least Common Denominator</li>
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+            </ul> 
+            <!--Flow presents here-->
+            <lightning:flow aura:id="FractionsFlow" />
+        </lightning:accordionSection>
+        <lightning:accordionSection name = "Decimals" label="Decimals" >
+            <ul>
+                <li>Relationship Between Fractions and Decimals</li>
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+            </ul> 
+            <!--Flow presents here-->
+            <lightning:flow aura:id="DecimalsFlow" />
+        </lightning:accordionSection>
+       <!-- <lightning:accordionSection name = "problemSolving" label="Problem Solving" >
+            <ul>
+                <li>Relationship Between Fractions and Decimals</li>
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+            </ul> 
+        </lightning:accordionSection>-->
+    </lightning:Accordion>
+
+
+</aura:component>

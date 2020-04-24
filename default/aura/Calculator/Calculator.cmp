@@ -1,0 +1,48 @@
+<aura:component controller="CalculatorController">
+
+    <!--Input string to be parsed as an operation with 'eval'-->
+    <!--Calculator attributes that store the two numbers and the result of 
+    the arithmetic on those two numbers. 
+    -->
+    <aura:attribute name="userInput" type="String"/>
+    <aura:attribute name="results" type="String"/>
+    <lightning:input name ="userInput " label ="Input Operations Here: " value="{!v.userInput}"/>
+    
+    The Results =  {!v.results}
+    <br/>
+    <lightning:buttonGroup >
+        <lightning:button label = "Evaluate" onclick="{!c.Evaluate}" />
+        <lightning:button label="Factor" onclick="{!c.Factoring}"/>
+        <lightning:button label="Find Roots/Zeros" onclick="{!c.findRoots}"/>
+    </lightning:buttonGroup>
+    <br/>
+    <lightning:buttonGroup>
+        <lightning:button label = "Derivative" onclick="{!c.Derivative}"/>
+        <lightning:button label = "Integral" onclick="{!c.Integral}"/>
+        <lightning:button label = "Area Under the Curve" onclick ="{!c.AreaUnderCurve}"/>
+        <lightning:button label="Tangent Line" onclick="{!c.TangentLine}"/>
+    </lightning:buttonGroup>
+    <br/>
+    <lightning:buttonGroup>
+        <lightning:button label="Sin" onclick="{!c.Sine}"/>
+        <lightning:button label = "Cos" onclick="{!c.Cosine}"/>
+        <lightning:button label="Tan" onclick="{!c.Tangent}"/>
+    </lightning:buttonGroup>
+    
+    <br/>
+
+    <!-- The Calculator Button Display-->   
+    <lightning:buttonGroup>
+        <lightning:button label = "(" onclick = "{!c.openParanthesis}"/>
+        <lightning:button label = ")" onclick = "{!c.closeParanthesis}"/>
+        <lightning:button label="Addition" onclick="{!c.Add}" />
+        <lightning:button label="Subtract" onclick="{!c.Sub}" />
+        <lightning:button label="Multiply" onclick="{!c.Mul}" />
+        <lightning:button label="Division" onclick="{!c.Divi}" />
+        <lightning:button label="Clear" onclick="{!c.Clear}" />
+    </lightning:buttonGroup> 
+
+    <br/>
+    
+
+</aura:component>	
