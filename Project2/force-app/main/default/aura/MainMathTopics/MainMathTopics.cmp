@@ -1,0 +1,67 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <!-- attributes for the visibility of each math topic section. All Booleans-->
+    <aura:attribute name="calculatorVisible" type="Boolean" default="false" />
+    <aura:attribute name="arithmeticVisible" type = "Boolean" default = "false"/>
+    <aura:attribute name="algebraVisible" type = "Boolean" default = "false"/>
+    <aura:attribute name="calculusVisible" type = "Boolean" default ="false"/>
+    <aura:attribute name ="userInfoVisible" type="Boolean" default = "false"/>
+
+    <!--Buttons for each section-->
+    <div class="demo-only" style="padding:0.5rem;background:#16325c">
+        <div class="slds-button-group " role="group">
+    <lightning:button class="slds-button slds-button_inverse" onclick = "{!c.toggleArithmetic}" label = "Arithmetic"/>
+    <lightning:button class="slds-button slds-button_inverse" onclick = "{!c.toggleAlgebra}" label = "Algebra"/>
+    <lightning:button class="slds-button slds-button_inverse" onclick = "{!c.toggleCalculus}" label = "Calculus"/>
+    <lightning:button class="slds-button slds-button_inverse" onclick="{! c.toggleCalculator}" label="Calculator"/>
+    <lightning:button class="slds-button slds-button_inverse" onclick="{!c.toggleUserInfo}" label ="User Info"/>
+        </div>
+    </div>
+    
+
+    <!--Fancy Background -->
+    <div style="background-color: aliceblue;">
+    <!--Accordion section for Arithmetic-->    
+    <aura:if isTrue="{!v.arithmeticVisible}">    
+        <div class="demo-only" style="padding:0.5rem;background:rgb(0, 115, 121)">
+            <div class="slds-text-color_inverse slds-text-heading_large slds-text-align_center" style="font-weight: bold;" >Arithmetic</div>
+          </div>
+            <!-- Arithmetic Accordion Subsections-->
+            <c:Arithmetic/>
+    </aura:if>
+           
+    <!--Algebra Section-->
+           <aura:if isTrue="{!v.algebraVisible}">
+            <div class="demo-only" style="padding:0.5rem;background:rgb(0, 115, 121)">
+                <div class="slds-text-color_inverse slds-text-heading_large slds-text-align_center" style="font-weight: bold;">Algebra</div>
+              </div>
+                <h1>Algebra</h1>
+                <p>Variables</p>
+                <p>Operations with Variables</p>
+                <!--Algebra accordion subsections-->
+                <c:Algebra/>
+        </aura:if>
+
+    <!--Calculus Section-->
+    <aura:if isTrue="{!v.calculusVisible}">
+        <div class="demo-only" style="padding:0.5rem;background:rgb(0, 115, 121)">
+            <div class="slds-text-color_inverse slds-text-heading_large slds-text-align_center" style="font-weight: bold;" > Calculus </div>
+          </div>
+            <h1 style="font-size: larger;">Calculus </h1>
+            <!--Calculus subsections-->
+            <c:Calculus/>
+    </aura:if>
+    <!--The Calculator-->
+        <aura:if isTrue="{! v.calculatorVisible }">  
+            <div class="demo-only" style="padding:0.5rem;background:rgb(0, 115, 121)">
+                <div class="slds-text-color_inverse slds-text-heading_large slds-text-align_center" style="font-weight: bold;" >Calculator</div>
+              </div>
+            <c:Calculator/>
+        </aura:if>
+    <aura:if isTrue="{! v.userInfoVisible }">
+        <div class="demo-only" style="padding:0.5rem;background:rgb(0, 115, 121)">
+            <div class="slds-text-color_inverse slds-text-heading_large slds-text-align_center" style="font-weight: bold;" >Search, Edit, Or Create New Info</div>
+          </div>
+            <c:UserInfo/>
+        </aura:if>
+    </div>    
+</aura:component>

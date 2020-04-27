@@ -1,0 +1,95 @@
+<aura:component>
+    <!--Handlers for the flows-->
+    <aura:handler name="init" value="{!this}" action="{!c.FlowBasicOperations}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowFractions}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowDecimals}" />
+
+
+    <lightning:Accordion aura:id ="arithmeticAccordion"   >
+        <lightning:accordionSection name = "fourOperations" label="The Four Basic Operations" >
+            <h1 style="font-size: larger;">The Four Basic Operations</h1>
+            <ul>
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+                <li>Order of Operations</li>
+            </ul> 
+            <!--Flow presents here-->
+            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+            <article class="slds-card">
+                  <header class="slds-media slds-media_center ">
+                    <div class="slds-media__body">
+                      <h2 class="slds-card__header-title">
+                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                          <span>Quiz</span>
+                        </a>
+                      </h2>
+                    </div>
+                  </header>
+                <div class="slds-card__body"><lightning:flow aura:id="BasicOperationsFlow" class="slds-align_absolute-center" /></div>
+            </article>
+        </div></div></div></div></div></div></div></div></div>
+            
+        </lightning:accordionSection>
+        <!-- Fractions accordion section-->
+        <lightning:accordionSection name = "Fractions" label="Fractions" >
+            <ul>
+                <li>Least Common Denominator</li>
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+            </ul> 
+            <!--Flow presents here-->
+            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                <article class="slds-card">
+                      <header class="slds-media slds-media_center ">
+                        <div class="slds-media__body">
+                          <h2 class="slds-card__header-title">
+                            <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                              <span>Quiz</span>
+                            </a>
+                          </h2>
+                        </div>
+                      </header>
+                    <div class="slds-card__body"><lightning:flow aura:id="FractionsFlow" class="slds-align_absolute-center" /></div>
+                </article>
+            </div></div></div></div></div></div></div></div></div>
+            
+        </lightning:accordionSection>
+        <lightning:accordionSection name = "Decimals" label="Decimals" >
+            <ul>
+                <li>Relationship Between Fractions and Decimals</li>
+                <li>Addition</li>
+                <li>Subtraction</li>
+                <li>Multiplication</li>
+                <li>Division</li>
+            </ul> 
+            <!--Flow presents here-->
+            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                <article class="slds-card">
+                      <header class="slds-media slds-media_center ">
+                        <div class="slds-media__body">
+                          <h2 class="slds-card__header-title">
+                            <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                              <span>Quiz</span>
+                            </a>
+                          </h2>
+                        </div>
+                      </header>
+                    <div class="slds-card__body"><lightning:flow aura:id="DecimalsFlow"  class="slds-align_absolute-center" /></div>
+                </article>
+            </div></div></div></div></div></div></div></div></div>
+        </lightning:accordionSection>
+       
+    </lightning:Accordion>
+
+
+</aura:component>

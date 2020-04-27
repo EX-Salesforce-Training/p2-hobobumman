@@ -1,0 +1,73 @@
+<aura:component>
+    <!--Handlers for the flows-->
+    <aura:handler name="init" value="{!this}" action="{!c.FlowLikeTerms}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowLinear}" />
+    <aura:handler name="init" value="{!this}" action="{!c.FlowQuadratic}" />
+
+    <lightning:accordion aura:id = "algebraAccordian" >
+                    <!--Variables Accordion-->
+                    <lightning:accordionSection name = "Variables" label = "Variables">
+                        <p>We say that terms are like if they have the same exact variable and the same exact power. </p> 
+                        <!--Flow Like Terms-->  
+                        <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <article class="slds-card">
+                                  <header class="slds-media slds-media_center ">
+                                    <div class="slds-media__body">
+                                      <h2 class="slds-card__header-title">
+                                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                                          <span>Quiz</span>
+                                        </a>
+                                      </h2>
+                                    </div>
+                                  </header>
+                                <div class="slds-card__body"><lightning:flow aura:id="LikeTermsFlow" class="slds-align_absolute-center" /></div>
+                            </article>
+                        </div></div></div></div></div></div></div></div></div>  
+                        
+                    </lightning:accordionSection>
+                    <!--Linear Accordion-->
+                    <lightning:accordionSection name = "Linear" label = "Linear Functions">
+                        <!--Flow linear functions-->
+                        <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <article class="slds-card">
+                                  <header class="slds-media slds-media_center ">
+                                    <div class="slds-media__body">
+                                      <h2 class="slds-card__header-title">
+                                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                                          <span>Quiz</span>
+                                        </a>
+                                      </h2>
+                                    </div>
+                                  </header>
+                                <div class="slds-card__body"><lightning:flow aura:id="LinearFlow" class="slds-align_absolute-center" /></div>
+                            </article>
+                        </div></div></div></div></div></div></div></div></div>  
+                        
+                    </lightning:accordionSection>
+                    <!--Quadratic accordion-->
+                    <lightning:accordionSection name = "quadraticAccordion" label = "Quadratic Functions">
+                        <!--FLOW quadratic FUNCTIONS -->
+                        <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large"><div class="slds-m-horizontal_xx-large">
+                            <article class="slds-card">
+                                  <header class="slds-media slds-media_center ">
+                                    <div class="slds-media__body">
+                                      <h2 class="slds-card__header-title">
+                                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                                          <span>Quiz</span>
+                                        </a>
+                                      </h2>
+                                    </div>
+                                  </header>
+                                <div class="slds-card__body"><lightning:flow aura:id="QuadraticFlow"  class="slds-align_absolute-center" /></div>
+                            </article>
+                        </div></div></div></div></div></div></div></div></div> 
+                        
+                    </lightning:accordionSection> 
+    </lightning:accordion>
+</aura:component>

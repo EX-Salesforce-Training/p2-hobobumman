@@ -1,0 +1,58 @@
+<aura:component controller = "UserInfoController">
+    <aura:attribute name="theUser" type="Account"/>
+    <aura:attribute name="userInput" type="String"/>
+
+    <aura:attribute name="newAccount" type="Account"
+                    default="{ 
+                             'sobjectType':'Account',
+                             'Name': 'YourName',
+                             'Rating' : 'Warm',
+                             'Problems_Completed__c': 0,
+                             'Username__c':' '
+                             }"/>
+                             
+<lightning:accordion>
+    <lightning:accordionSection name = "Search User" label = "Search User">
+    <h1 style="font-size: larger;">Display User Information</h1>
+    <lightning:input name ="userInput " label ="Input Your Name or Username Here: " value="{!v.userInput}"/>
+    
+    <lightning:button label = "Get User Info" onclick ="{!c.ObtainUserInfo}"/>
+
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                  <span>Name: {!v.theUser.Name}</span>
+                </a>
+              </h2>
+            </div>
+          </header>
+        </div>
+        <div class="slds-card__body"> Username: {!v.theUser.Username__c} </div>
+        <div class="slds-card__body"> Problems Completed: {!v.theUser.Problems_Completed__c}</div>
+      </article>
+    
+    <br/>
+    <lightning:formattedText value="{!v.theUser.Problems_Completed__c}"/>
+</lightning:accordionSection>
+<lightning:accordionSection name ="New User" label="New User">
+    <h1 style="font-size: larger;"> Create new User.    </h1>
+    
+    <fieldset class="slds-box slds-theme--default slds-container--small">
+    	<form class="slds-form--stacked">
+            <lightning:input aura:id="new_Name"
+                             label="Name"
+                             name="newName"
+                             value="{!v.newAccount.Name}" />
+            <lightning:input aura:id="new_UserName"
+                             label="Username"
+                             name="newUsername"
+                             value="{!v.newAccount.Username__c}" />
+            <lightning:button label="Create User" onclick="{!c.CreateAccount}" />
+        </form>
+    </fieldset>
+</lightning:accordionSection>
+    </lightning:accordion>
+</aura:component>

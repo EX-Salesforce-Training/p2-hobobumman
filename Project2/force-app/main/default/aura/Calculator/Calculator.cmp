@@ -1,0 +1,110 @@
+<aura:component controller="CalculatorController">
+
+    <!--Input string to be parsed as an operation with api 'simplify'-->
+    <!--Calculator attributes that store the two numbers and the result of 
+    the arithmetic on those two numbers. 
+    -->
+    <aura:attribute name="userInput" type="String"/>
+    <aura:attribute name="results" type="String"/>
+    <!--input-->
+    <div>
+        <p style="font-size: 32px; text-align:center "  > Input Below:</p>
+    <lightning:input name ="userInput " label ="Input: " value="{!v.userInput}"/>
+    </div>
+    <!--output-->
+    <div class="slds-text-align_center slds-text-heading_large">The Results =  {!v.results}</div>
+    
+    <br/>
+    
+     <!-- The Calculator Button Display-->  
+     <!--basic arithmetic button group--> 
+    <div class="demo-only" style="padding:0.5rem;background: rgb(0, 128, 128)">
+        <div class="slds-button-group slds-align_absolute-center" role="group">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-5">
+                    <span><lightning:button class="slds-button_stretch" label="Addition" onclick="{!c.Add}" /></span>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <span><lightning:button  class="slds-button_stretch" label="Subtract" onclick="{!c.Sub}" /></span>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <span><lightning:button class="slds-button_stretch" label="Multiply" onclick="{!c.Mul}" /></span>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <span> <lightning:button class="slds-button_stretch" label="Division" onclick="{!c.Divi}" /></span>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <span> <lightning:button class="slds-button_stretch" label = "Evaluate" onclick="{!c.Evaluate}" /></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <!--Algebra button group-->
+    <div class="demo-only" style="padding:0.5rem;background: rgb(0,118,128)">
+        <div class="slds-button-group slds-align_absolute-center" role="group">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-6">
+                    <span><lightning:button class="slds-button_stretch" label = "(" onclick = "{!c.openParanthesis}"/></span>
+                  </div>
+                  <div class="slds-col slds-size_1-of-6">
+                    <span><lightning:button class="slds-button_stretch" label = ")" onclick = "{!c.closeParanthesis}"/></span>
+                </div>
+                <div class="slds-col slds-size_1-of-6">
+                    <span> <lightning:button class="slds-button_stretch" label="Factor" onclick="{!c.Factoring}"/></span>
+                </div>
+                <div class="slds-col slds-size_3-of-6">
+                    <span> <lightning:button class="slds-button_stretch" label="Find Roots/Zeros" onclick="{!c.findRoots}"/></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <!--Trig button group-->
+    <div class="demo-only" style="padding:0.5rem;background: rgb(0, 108, 128)">
+        <div class="slds-button-group slds-align_absolute-center" role="group">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-4">
+                    <span> <lightning:button class="slds-button_stretch" label="Sine" onclick="{!c.Sine}"/></span>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <span> <lightning:button class="slds-button_stretch" label = "Cosine" onclick="{!c.Cosine}"/> </span>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <span> <lightning:button class="slds-button_stretch" label="Tangent" onclick="{!c.Tangent}"/> </span>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <span> <lightning:button  class="slds-button_stretch" label="Clear" onclick="{!c.Clear}" /></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br/>
+    <!--Calculus button group-->
+    <div class="demo-only" style="padding:0.5rem;background: rgb(0, 98, 128)">
+        <div class="slds-button-group slds-align_absolute-center" role="group">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-7">
+                    <span><lightning:button class="slds-button_stretch"  label = "Derivative" onclick="{!c.Derivative}"/> ></span>
+                </div>
+                <div class="slds-col slds-size_1-of-7">
+                    <span><lightning:button  class="slds-button_stretch" label = "Integral" onclick="{!c.Integral}"/></span>
+                </div>
+                <div class="slds-col slds-size_3-of-7">
+                    <span><lightning:button  class="slds-button_stretch" label = "Area Under Curve" onclick ="{!c.AreaUnderCurve}"/></span>
+                </div>
+                <div class="slds-col slds-size_2-of-7">
+                    <span><lightning:button  class="slds-button_stretch" label="Tangent Line" onclick="{!c.TangentLine}"/></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+   
+
+
+    
+
+</aura:component>
