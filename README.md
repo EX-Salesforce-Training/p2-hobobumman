@@ -18,3 +18,5 @@ Use lightning to create a custom UI
 *	Implement Service Cloud (10%)
 ## Sales Cloud (Optional)
 *	Implement Sales Cloud (10%)
+
+The Newton REST API is 404. So the calculator doesn't work because of that. Sad. 
